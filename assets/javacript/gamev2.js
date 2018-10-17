@@ -8,7 +8,8 @@ var guessesLeft = 9;
 var underScores = [];
 var userGuesses = [];
 var randomWord;
-var wintracker;
+var wintracker = 0;
+var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
 
 // Function
@@ -30,39 +31,51 @@ function startGame() {
     }
     //Displays the underscores
     document.getElementById('wordBlanks').innerHTML = underScores.join(" ");
-    
+
     //resets the variables when the round is over
     wrongLetter = [];
     guessesLeft = 9;
 }
-function winlose(){
-    if (wintracker === randomWord.length){
+function winlose() {
+    if (wintracker === randomWord.length) {
+        console.log("you win");
         //display picture of show and title while playing theme music
     }
-    else if(guessesLeft === 0){
+    else if (guessesLeft === 0) {
+        console.log("you lose");
         //play wahwah sound?
     }
 }
 // User letter guess
 document.onkeyup = function (event) {
     var userGuess = event.key.toUpperCase();
-
-    if (randomWord.indexOf(userGuess) > -1) 
-    {
-        for( i= 0; i < randomWord.length; i++){
-            if(randomWord[i] === userGuess){
-                underScores[i] = userGuess; 
-                document.getElementById('wordBlanks').innerHTML = userGuess;
-                // console.log(underScores)
-                wintracker++; 
+    //tests to see if user's character guess is in the word
+    if (randomWord.indexOf(userGuess) > -1) {
+        for (i = 0; i < randomWord.length; i++) {
+            if (randomWord[i] === userGuess) {
+                underScores[i] = userGuess;
+                
+                console.log(underScores)
+                wintracker++;
+                console.log(wintracker);
             }
         }
+        document.getElementById('wordBlanks').innerHTML = userGuess;
     }
+    //This prevents the user from guessing the same letter mutliple times and alerts them
+    else if (wrongLetter.indexOf(userGuess) > -1) {
+        alert('you have already guessed this letter');
+    }
+    //Testing to see if user guess is a letter character
+    else if (alphabet.indexOf(userGuess) > -1) {
+        alert('this is not a valid guess');
+    }
+
     else {
         wrongLetter.push(userGuess);
-        guessesLeft --;
-        document.getElementById('guesses_left').innerHTML =  guessesLeft;
-        document.getElementById('letters_guessed').innerHTML =  wrongLetter;
+        guessesLeft--;
+        document.getElementById('guesses_left').innerHTML = guessesLeft;
+        document.getElementById('letters_guessed').innerHTML = wrongLetter;
     }
 }
 
