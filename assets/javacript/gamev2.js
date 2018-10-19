@@ -12,6 +12,9 @@ var winCount = 0;
 var alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 var GOTtheme = document.getElementById("GOT");
 var madMenTheme = document.getElementById("MadMen");
+var sopranosTheme = document.getElementById("TheSopranos");
+var rickAndMortyTheme = document.getElementById("RickandMorty");
+var entourageTheme = document.getElementById("Entourage");
 
 // Function
 // ==============================================================================
@@ -81,18 +84,29 @@ function winLose() {
     var testwin = underScores.includes(' _ ');
 
     if (testwin === false && randomWord == wordBank[1]) {
-        winCount++;
-        console.log("you win");
-        //display picture of show and title while playing theme music adds one to win variable
+        winCount++; 
         document.getElementById('wins_text').innerHTML = "Wins:" + winCount;
         playAudioGOT();
     }
     else if (testwin === false && randomWord == wordBank[3]) {
-        winCount++;
-        console.log("you win");
-        //display picture of show and title while playing theme music adds one to win variable
+        winCount++; 
         document.getElementById('wins_text').innerHTML = "Wins:" + winCount;
         playAudioMadmen();
+    }
+    else if (testwin === false && randomWord == wordBank[0]) {
+        winCount++; 
+        document.getElementById('wins_text').innerHTML = "Wins:" + winCount;
+        playAudioEntourage();
+    }
+    else if (testwin === false && randomWord == wordBank[2]) {
+        winCount++; 
+        document.getElementById('wins_text').innerHTML = "Wins:" + winCount;
+        playAudioSopranos();
+    }
+    else if (testwin === false && randomWord == wordBank[4]) {
+        winCount++; 
+        document.getElementById('wins_text').innerHTML = "Wins:" + winCount;
+        playAudioRickandMorty();
     }
     else if (guessesLeft === 0) {
         console.log("you lose");
@@ -109,6 +123,9 @@ $(".reset").on("click", function () {
     randomWord;
     pauseAudioGOT();
     pauseAudioMadMen();
+    pauseAudioEntourage();
+    pauseAudioSopranos();
+    pauseAudioRickandMorty();
     startGame();
 })
 //fucntions to play or pause music when win and reset
@@ -118,12 +135,32 @@ function playAudioGOT() {
 function playAudioMadmen() {
     madMenTheme.play();
 }
+function playAudioEntourage() {
+    entourageTheme.play();
+}
+function playAudioSopranos() {
+    sopranosTheme.play();
+}
+function playAudioRickandMorty() {
+    rickAndMortyTheme.play();
+}
+
 function pauseAudioGOT() {
     GOTtheme.pause();
 }
 function pauseAudioMadMen() {
     madMenTheme.pause();
 }
+function pauseAudioEntourage() {
+    entourageTheme.pause();
+}
+function pauseAudioSopranos() {
+    sopranosTheme.pause();
+}
+function pauseAudioRickandMorty() {
+    rickAndMortyTheme.pause();
+}
+
 
 
 
