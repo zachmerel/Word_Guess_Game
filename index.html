@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,19 +9,28 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Hangman Game</title>
 </head>
+
 <body>
+    <audio id="GOT">
+        <source src="assets/audio/Game of Thrones Theme.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="MadMen">
+            <source src="assets/audio/Mad Men Theme.mp3" type="audio/mpeg">
+        </audio>
     <div>
         <p id="directions_text">Press any key to get started!</p>
-        <p id="wins_text">Wins: </p>
+        <p id="wins_text"> </p>
         <p id="randomWord">Current Word</p>
         <p id="wordBlanks"></p>
         <p>Number of Guesses Remaining:</p>
         <p id="guesses_left"></p>
         <p>Letters Guessed: </p>
         <p id="letters_guessed"></p>
+        <button type="button" class="btn btn-dark reset">Reset</button>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/javacript/gamev2.js"></script>
 </body>
-<script type="text/javascript"  src="assets/javacript/gamev2.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
 </html>
