@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <title>Hangman Game</title>
 </head>
 
@@ -26,16 +27,59 @@
     <audio id="TheSopranos">
         <source src="assets/audio/The Sopranos Opening Theme.mp3" type="audio/mpeg">
     </audio>
-    <div>
-        <p id="directions_text">Press any key to get started!</p>
-        <p id="wins_text"> </p>
-        <p id="randomWord">Current Word</p>
-        <p id="wordBlanks"></p>
-        <p>Number of Guesses Remaining:</p>
-        <p id="guesses_left"></p>
-        <p>Letters Guessed: </p>
-        <p id="letters_guessed"></p>
-        <button type="button" class="btn btn-dark reset">Reset</button>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 mainContainer">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="display-4 displayText">Televsion Hangman</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <h5 id="directions_text" class="displayText">Press any key to get started!</h5>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <h5 id="wins_text" class="displayText"></h5>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <h5 id="randomWord" class="displayText">Current Word</h5>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <h5 id="wordBlanks" class="displayText"></h5>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <h5 class="displayText">Number of Guesses Remaining:</h5>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <h5 id="guesses_left" class="displayText"></h5>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <h5 class="displayText">Letters Guessed:</h5>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <h5 id="letters_guessed" class="displayText"></h5>
+                    </div>
+                </div>
+                <div class="row">
+                        <button type="button" class="btn btn-dark reset" style="margin:10px;">Reset</button>
+                </div>
+            </div>
+        </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>

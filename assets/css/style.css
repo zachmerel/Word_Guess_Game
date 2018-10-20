@@ -1,0 +1,13 @@
+.displayText{
+
+    color: white; 
+    text-align:center; 
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.mainContainer{
+    background-color: black; 
+    padding: 20px 20px 0px 20px;
+    margin-top:80px;
+    border: solid 4px whitesmoke;
+}
