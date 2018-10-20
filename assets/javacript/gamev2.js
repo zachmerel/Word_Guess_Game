@@ -44,9 +44,8 @@ function startGame() {
 
 // User letter guess
 document.onkeyup = function (event) {
-    console.log(event)
+    // hideDirections();
     if (event.keyCode < 65 || event.keyCode > 90) {
-        console.log(event.keyCode);
         alert('this is not a valid guess');
     }
     else {
@@ -80,32 +79,36 @@ document.onkeyup = function (event) {
 }
 //determining wins and lose
 function winLose() {
-    console.log(underScores);
     var testwin = underScores.includes(' _ ');
 
     if (testwin === false && randomWord == wordBank[1]) {
         winCount++; 
         document.getElementById('wins_text').innerHTML = "Wins:" + winCount;
+        $("#background").css("background-image", "url(/Word_Guess_Game/assets/images/GOTbackground3.jpg)");
         playAudioGOT();
     }
     else if (testwin === false && randomWord == wordBank[3]) {
         winCount++; 
         document.getElementById('wins_text').innerHTML = "Wins:" + winCount;
+        $("#background").css("background-image", "url(/Word_Guess_Game/assets/images/madmenbackground.jpg)");
         playAudioMadmen();
     }
     else if (testwin === false && randomWord == wordBank[0]) {
         winCount++; 
         document.getElementById('wins_text').innerHTML = "Wins:" + winCount;
+        $("#background").css("background-image", "url(/Word_Guess_Game/assets/images/entouragebackground.jpg)");
         playAudioEntourage();
     }
     else if (testwin === false && randomWord == wordBank[2]) {
         winCount++; 
         document.getElementById('wins_text').innerHTML = "Wins:" + winCount;
+        $("#background").css("background-image", "url(/Word_Guess_Game/assets/images/sopranosbackground.jpg)");
         playAudioSopranos();
     }
     else if (testwin === false && randomWord == wordBank[4]) {
         winCount++; 
         document.getElementById('wins_text').innerHTML = "Wins:" + winCount;
+        $("#background").css("background-image", "url(/Word_Guess_Game/assets/images/rickbackground.png)");
         playAudioRickandMorty();
     }
     else if (guessesLeft === 0) {
@@ -126,6 +129,7 @@ $(".reset").on("click", function () {
     pauseAudioEntourage();
     pauseAudioSopranos();
     pauseAudioRickandMorty();
+    $("#background").css("background-image", "url(/Word_Guess_Game/assets/images/static.jpg)");
     startGame();
 })
 //fucntions to play or pause music when win and reset
@@ -161,6 +165,11 @@ function pauseAudioRickandMorty() {
     rickAndMortyTheme.pause();
 }
 
+// function hideDirections(){
+// if(document.onkeyup = true){
+//     $("directions_text").hide();
+// }
+// }
 
 
 
