@@ -14,4 +14,9 @@
 
 #background{
     background-image:url(/Word_Guess_Game/assets/images/static.jpg);
+    background-size: contain;
+   
+    
+    
 }
+  

@@ -22,7 +22,6 @@ var entourageTheme = document.getElementById("Entourage");
 function startGame() {
     //chooses a word from the wordBank at random.
     randomWord = wordBank[Math.floor(Math.random() * wordBank.length)];
-    console.log(randomWord)
     //Generates underscores same length as word.
     for (var i = 0; i < randomWord.length; i++) {
 
@@ -44,6 +43,8 @@ function startGame() {
 
 // User letter guess
 document.onkeyup = function (event) {
+    document.getElementById('directions_text').innerHTML = '';
+
     // hideDirections();
     if (event.keyCode < 65 || event.keyCode > 90) {
         alert('this is not a valid guess');
@@ -69,8 +70,8 @@ document.onkeyup = function (event) {
 
         else {
             wrongLetter.push(userGuess);
-            winLose();
             guessesLeft--;
+            winLose();
             document.getElementById('guesses_left').innerHTML = guessesLeft;
             document.getElementById('letters_guessed').innerHTML = wrongLetter;
         }
@@ -112,7 +113,7 @@ function winLose() {
         playAudioRickandMorty();
     }
     else if (guessesLeft === 0) {
-        console.log("you lose");
+        playLoser();
         //alert user
     }
 }
@@ -129,6 +130,7 @@ $(".reset").on("click", function () {
     pauseAudioEntourage();
     pauseAudioSopranos();
     pauseAudioRickandMorty();
+    pauseLoser();
     $("#background").css("background-image", "url(/Word_Guess_Game/assets/images/static.jpg)");
     startGame();
 })
@@ -148,6 +150,9 @@ function playAudioSopranos() {
 function playAudioRickandMorty() {
     rickAndMortyTheme.play();
 }
+function playLoser() {
+    Loser.play();
+}
 
 function pauseAudioGOT() {
     GOTtheme.pause();
@@ -164,12 +169,10 @@ function pauseAudioSopranos() {
 function pauseAudioRickandMorty() {
     rickAndMortyTheme.pause();
 }
+function pauseLoser() {
+    Loser.pause();
+}
 
-// function hideDirections(){
-// if(document.onkeyup = true){
-//     $("directions_text").hide();
-// }
-// }
 
 
 
